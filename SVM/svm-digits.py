@@ -34,7 +34,7 @@ class optStruct:
 		self.b = 0 										#初始化b参数为0
 		self.eCache = np.mat(np.zeros((self.m,2))) 		#根据矩阵行数初始化虎误差缓存，第一列为是否有效的标志位，第二列为实际的误差E的值。
 		self.K = np.mat(np.zeros((self.m,self.m)))		#初始化核K
-		for i in range(self.m):							#计算所有数据的核K
+		for i in range(self.m):							##计算所有数据的核K
 			self.K[:,i] = kernelTrans(self.X, self.X[i,:], kTup)
 
 def kernelTrans(X, A, kTup): 
